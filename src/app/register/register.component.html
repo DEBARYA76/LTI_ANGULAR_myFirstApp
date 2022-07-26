@@ -1,0 +1,76 @@
+
+<body>
+    <!-- <div class="header">
+        <h1>Welcome to LTI</h1>
+    </div>
+    <div class="topnav">
+        <ul>
+          <li><a [routerLink]="['/homeLink']">Home</a></li>
+          <li><a [routerLink]="['/registerLink']">Register</a></li>
+          <li><a [routerLink]="['/loginLink']">Login</a></li>
+        <li><img src="./assets/images/lti.jpg" style="float: right; padding-right: 20px; height:50px"></li>
+        </ul>
+      </div> -->
+    <div class="row">
+        <div class="main">
+            <div class="card">
+                <h2 style="text-align: center;">Register to explore amazing career opportunities</h2>
+            <form #regForm="ngForm"(ngSubmit)="register()"> 
+               
+              <div class="container">
+                  <label for="userName"><b>Username</b></label>
+<!--                  
+                  <input type="text" placeholder="Enter Username"  required name="userName" [(ngModel)]="user.userName">
+                  <div #ngIf="userName.touched && userName.invalid"
+                    <div style="color:red;"> please enter your name </div>">
+                  <br>{{user.userName}} -->
+
+                  <input type="text" #uname="ngModel" placeholder="Enter Username" required name="userName"[(ngModel)]=user.userName  >
+                  <div *ngIf="uname.touched && uname.invalid">
+                      <div style="color:red;"> Please enter your name</div>
+                  </div>
+                  <label for="password"><b>Password</b></label>
+                  <!-- <input type="password" placeholder="Enter Password" required name="password" [(ngModel)]="user.password">
+                   <br>{{user.password}} -->
+
+                   <input type="password" #upass="ngModel" placeholder="Enter Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" [(ngModel)]=user.password>
+          
+              <div *ngIf="upass.invalid && (upass.dirty || upass.touched)">
+                <div *ngIf="upass.errors?.['required']" style="color:red;"> Please enter your password</div>
+                <div *ngIf="upass.errors?.['pattern']" style="color:red;"> Not a strong password</div>
+              </div>
+
+
+                   <!-- <div #ngIf="userName.touched && userName.invalid"
+                   <div style="color:red;"> please enter your name </div>"> -->
+
+
+
+                  <label for="email"><b>Email Address</b></label>
+                  <!-- <input type="email" placeholder="Enter Email Address" required name="email" [(ngModel)]="user.email">
+                  <br>{{user.email}} -->
+
+                  <input type="email" #mail="ngModel" placeholder="Enter Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  name="email" [(ngModel)]=user.email>
+                  <div *ngIf="mail.invalid && (mail.dirty || mail.touched)">
+                    <div *ngIf="mail.errors?.['required']" style="color:red;"> Please enter your email address</div>
+                    <div *ngIf="mail.errors?.['pattern']" style="color:red;"> invalid email address</div>
+                  </div>
+                  <label for="city"><b>City</b></label>
+                  <input type="text" placeholder="Enter City" required name="city" [(ngModel)]="user.city">
+              
+                  <label for="mobile"><b>Mobile No.</b></label>
+                  <!-- <input type="tel" placeholder="Enter Mobile Number" required name="mobile"  [(ngModel)]="user.mobile"> -->
+                  <input type="tel" #mob=ngModel placeholder="Enter Mobile Number" required pattern="[0-9]{10}$" name="mobile" [(ngModel)]=user.mobile>
+                  <div *ngIf="mob.invalid && (mob.dirty || mob.touched)">
+                    <div *ngIf="mob.errors?.['required']" style="color:red;"> Please enter your mobile no</div>
+                    <div *ngIf="mob.errors?.['pattern']" style="color:red;"> invalid mobile no</div>
+                  </div>
+                  <button type="submit">Register</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2020 Larsen & Toubro Infotech Limited</p>
+      </div> 

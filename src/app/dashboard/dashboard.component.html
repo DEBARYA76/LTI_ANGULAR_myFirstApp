@@ -1,0 +1,28 @@
+
+<div>
+      Welcome,{{userName}}
+</div>
+
+<div class="topnav">
+    <ul>
+      <li><a [routerLink]="['./courseLink']">COURSE</a></li>
+      <li><a [routerLink]="['./profileLink']">PROFILE</a></li>
+      <li><a [routerLink]="['./changepasswordLink']">CHANGE PASSWORD</a></li>
+      <li>
+        <img
+          src="./assets/images/lti.jpg"
+          style="float: right; padding-right: 20px; height: 50px"
+        />
+      </li>
+    </ul>
+
+
+
+
+    <div>
+        <router-outlet></router-outlet>
+        
+      </div>
+  </div>
+
+  

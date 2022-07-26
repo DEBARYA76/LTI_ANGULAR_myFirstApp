@@ -1,0 +1,38 @@
+
+ 
+  
+<!-- 
+   <app-home></app-home> -->
+  <!-- <app-bind></app-bind> -->
+  <!-- <app-register></app-register> -->
+  <!-- <app-login></app-login> -->
+
+  
+  <div class="header">
+    <h1>Welcome to LTI</h1>
+  </div>
+  <div class="topnav">
+    <ul>
+      <li><a [routerLink]="['/homeLink']">Home</a></li>
+      <li><a [routerLink]="['/registerLink']">Register</a></li>
+      <li><a [routerLink]="['/loginLink']">Login</a></li>
+      <li> 
+        
+        <li><a [routerLink]="['/PostLink']">Post</a></li>
+        <img
+          src="./assets/images/lti.jpg"
+          style="float: right; padding-right: 20px; height: 50px"
+        />
+      <!-- </li> -->
+    </ul>
+  </div>
+  <!-- selector of app component
+  writing the selector as below will be replaced with app.component.html content -->
+  <router-outlet></router-outlet>
+
+
+
+  <div class="footer">
+    <p>© 2020 Larsen & Toubro Infotech Limited</p>
+  </div>
+  

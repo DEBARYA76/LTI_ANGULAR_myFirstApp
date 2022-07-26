@@ -1,0 +1,53 @@
+<!-- <div class="header">
+    <h1>Welcome to LTI</h1>
+</div>
+<div class="topnav">
+    <ul>
+    <li><a [routerLink]="['/index.html']">Home</a></li>
+    <li><a [routerLink]="['/register.html']">Register</a></li>
+    <li><a [routerLink]="['/login.html']">Login</a></li>
+    <li><img src="./assets/images/lti.jpg" style="float: right; padding-right: 20px; height:50px"></li>
+    </ul>
+  </div> -->
+<div class="row">
+    <div class="main">
+        <div class="card">
+            <h2 style="text-align: center;">Login to a world of opportunities!</h2>
+        <form #loginForm = "ngForm" (ngSubmit)="login()">
+          
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <div style="color:red;text-align: center;">
+                {{errorMessage}}
+              </div>
+              
+              
+              <input type="text" placeholder="Enter Username" name="userName" required name = "userName" [(ngModel)]="user.userName" #uname =ngModel pattern="[a-zA-Z]*$">
+          <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
+            <div *ngIf = "uname.errors?.['required']" style="color:red">Enter name</div>
+            <div *ngIf = "uname.errors?.['pattern']" style="color:red">Invalid name</div>
+          </div>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required name = "password" [(ngModel)]="user.password" #upass=ngModel pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+              <div *ngIf="upass.invalid && (upass.dirty || upass.touched)">
+              <div *ngIf = "upass.errors?.['required']" style="color:red">Enter password</div>
+              <div *ngIf = "upass.errors?.['pattern']" style="color:red">Invalid password</div>
+            </div>
+          
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+          
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+    </div>
+<!-- </div>
+<div class="footer">
+    <p>© 2020 Larsen & Toubro Infotech Limited</p>
+  </div>  -->

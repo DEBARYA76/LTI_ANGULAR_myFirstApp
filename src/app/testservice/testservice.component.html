@@ -1,0 +1,90 @@
+<!-- <table>
+    <tr>
+        
+        
+        <th>userId</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+
+    </tr>
+
+
+
+    <tr *ngFor="let post of post">
+        <td>{{post.userId}}</td>
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+
+
+
+    </tr>
+
+
+
+</table>
+
+<span>
+
+    <input type="text" [(ngModel)]="postId" />
+
+    <button (click)="getComments()">Get Comments</button>
+
+  </span>
+
+
+<table border="1"   >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Body</th>
+    </tr>
+  
+  
+  
+    <tr *ngFor="let comment of comment">
+        <td>{{comment.postId}}</td>
+      <td>{{comment.id}}</td>
+      <td>{{comment.name}}</td>
+      <td>{{comment.email}}</td>
+      <td>{{comment.body}}</td>
+      
+    </tr>
+  </table>
+ -->
+
+
+ <table style="border:blue 2px;" class="container"  >
+    <tr>
+        <th>employeeID</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>SALARY</th>
+        <th>DATE</th>
+    </tr>
+  
+  
+  
+    <tr *ngFor="let e of employees ">
+      <td>{{e.empid}}</td>
+      <td>{{e.name|uppercase}}</td>
+      <td>{{e.dob}}</td>
+      <td>{{e.salary|currency}}</td>
+      <td>{{e.salary|currency:'USD':false}}</td>
+      <td>{{e.salary|currency:'INR':false}}</td>
+      <td>{{e.salary|currency:'INR':true}}</td>
+      <td>{{today|date}}</td>
+      
+      
+    </tr>
+  </table>
+
+
+
+
+
+
+<!-- 
+<p>testservice works!</p> -->
